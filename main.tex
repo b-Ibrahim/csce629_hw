@@ -1,5 +1,182 @@
-\documentclass{article}
-\usepackage[utf8]{inputenc}
+% Comment lines start with %
+% LaTeX commands start with \
+
+\documentclass[12pt]{article}  % This is an article with font size 12-point
+
+% Packages add features
+\usepackage{times}     % font choice
+\usepackage{amsmath}   % American Mathematical Association math formatting
+\usepackage{amsthm}    % nice formatting of theorems
+\usepackage{latexsym}  % provides some more symbols
+\usepackage{fullpage}  % uses most of the page (1-inch margins)
+
+\setlength{\parskip}{.1in}  % increase the space between paragraphs
+
+\renewcommand{\baselinestretch}{1.1}  % increase the space between lines
+
+% Convenient renaming of symbols for logic formulas
+\newcommand{\NOT}{\neg}
+\newcommand{\AND}{\wedge}
+\newcommand{\OR}{\vee}
+\newcommand{\XOR}{\oplus}
+\newcommand{\IMPLIES}{\rightarrow}
+\newcommand{\IFF}{\leftrightarrow}
+
+% Actual content starts here.
 \begin{document}
-(Type your content here.)
+
+\begin{center}         % center all the material between begin and end
+{\large                % use larger font
+CSCE 629-601, Analysis of Algorithms \\  % \\ is line break
+Spring 2017 \\
+Homework 1 \\
+Bassem Ibrahim}
+\end{center}
+
+% blank line separates paragraphs.  First line of a paragraph is automatically
+% indented.  
+
+\rule{6in}{.1pt}       % horizontal line 6 inches long and .1 point high
+                    
+\noindent              % don't indent
+{\bf Instructions:}    % \bf makes text boldface
+                       % \em makes text emphasized (italics)
+
+\begin{itemize}        % makes an itemized list
+\item The numbered exercises and problems are from the textbook.  
+\item Each exercise is worth 10 points.
+\item Grading will be based on correctness and clarity.
+\item Always justify your answers, even if the question does not
+      explicitly say so.  Argue correctness and running time of all algorithms.
+\item Don't forget to acknowledge all sources of assistance on the cover
+      sheet, and write up your solutions on your own.
+\item {\em Turn in a paper copy of the .pdf file with a
+      filled-in assignment cover sheet at the beginning of class on 
+      Wednesday, Feb 1, 2017.}
+\end{itemize}
+
+\rule{6in}{.1pt}       % horizontal line 6 inches long and .1 point high
+
+\noindent
+{\bf LaTeX hints:}  Read this .tex file for some explanations that are in
+the comments.
+
+Math formulas are enclosed in \$ signs, e.g., {\tt \$x + y = z\$}
+becomes $x + y = z$.
+
+Logical operators: $\NOT, \AND, \OR, \XOR, \IMPLIES, \IFF$.
+
+Here is a truth table using the ``tabular'' environment:
+
+\begin{center}
+\begin{tabular}{|c|c|}  % two columns, both centered (c), 
+                        % divided by vertical lines (|)
+\hline                  % horizontal line
+$p$ & $\NOT p$ \\       % separate column entries with &
+\hline
+\hline
+T & F \\
+\hline
+F & T \\
+\hline
+\end{tabular}
+\end{center}
+
+{\bf ** Delete the instructions and the LaTeX hints in your solution. **}
+
+\rule{6in}{.1pt}       % horizontal line 6 inches long and .1 point high
+
+%---------------------------------------------------------------------
+
+\noindent
+{\bf Exercise 2.3-3:}
+** YOUR ANSWER GOES HERE **
+
+\rule{6in}{.1pt}       % horizontal line 6 inches long and .1 point high
+
+\noindent
+{\bf Exercise 2.3-7:}
+** YOUR ANSWER GOES HERE **
+
+\rule{6in}{.1pt}       % horizontal line 6 inches long and .1 point high
+
+\noindent
+{\bf Exercise 3.1-2:}  Prove $(n+a)^b= \Theta(n^b)$
+
+$c_1.(n^b)\leq(n+a)^b\leq c_2.(n^b)$
+
+Divide by $n^b$
+
+$c_1\leq(\frac{n+a}{n})^b\leq c_2$
+
+For $n\geq 1$, $c_1\leq (1+a)^b$ and $c_2\geq 1$
+
+
+\rule{6in}{.1pt}       % horizontal line 6 inches long and .1 point high
+
+\noindent
+{\bf Exercise 3.1-4:}
+
+Is $2^{n+1}=O(2^n)$?
+
+$2^{n+1}\leq c.(2^n)$
+
+Divide by $2^n$
+
+$2^{1}\leq c$
+
+$2^{n+1}=O(2^n)$ if $c\geq 2$ $\forall$ $n\geq 1$
+
+Is $2^{2n}=O(2^n)$?
+
+$2^{2n}\leq c.(2^n)$
+
+Divide by $2^n$
+
+$2^{n}\leq c$
+
+$2^{n+1}\neq O(2^n)$ if because $c$ is function of $n$
+
+\rule{6in}{.1pt}       % horizontal line 6 inches long and .1 point high
+
+\noindent
+{\bf Exercise 3.2-3:}
+** YOUR ANSWER GOES HERE **
+
+\rule{6in}{.1pt}       % horizontal line 6 inches long and .1 point high
+
+\noindent
+{\bf Exercise 4.5-3:}
+** YOUR ANSWER GOES HERE **
+
+\rule{6in}{.1pt}       % horizontal line 6 inches long and .1 point high
+
+\noindent
+{\bf Problem 4-3, parts (a) through (e):}
+** YOUR ANSWER GOES HERE **
+
+\rule{6in}{.1pt}       % horizontal line 6 inches long and .1 point high
+
+\noindent
+{\bf Problem 4-5:}  This one is just for fun and won't be graded.
+There was a typo in old printings of the book:  For part (a), assume
+that {\em at least} $n/2$ chips are bad.
+Here is a suggestion for how to start with part (a).  Suppose $n$ is
+even and exactly $n/2$ of the chips are bad.
+Show that even if we test all pairs of chips, for a total of $n(n-1)$ tests,
+there are two different scenarios (choices for which chips are good
+and which are bad) in which the outputs of the chips are the same.
+As a warm-up, consider the case of $n=2$, where in one scenario
+chip 1 is good and chip 2 is bad, while in the second scenario
+chip 1 is bad and chip 2 is good.  In this case, there is only one test
+to be done (chips 1 and 2 together).  Find an output for chip 1 and
+an output for chip 2 that are possible in both the scenarios.
+
+** YOUR ANSWER GOES HERE **
+
+\rule{6in}{.1pt}       % horizontal line 6 inches long and .1 point high
+
+\noindent
+{\bf *** there will be a few more ***}
+
 \end{document}
